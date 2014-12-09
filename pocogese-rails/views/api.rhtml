@@ -1,0 +1,9 @@
+<h3><%= @pg_controller %>#login(name,password)</h3>
+<%= form_tag :action => "pocogese_process_form" %>
+    <%= hidden_field "pocogese_command" , "login" %>
+    <table>
+    <tr><td>name:</td><td><%= text_field "item" , "name" %></td></tr>
+    <tr><td>password:</td><td><%= text_field "item" , "password" %></td></tr>
+    <tr><td>&nbsp;</td><td><%= submit_tag %></td></tr>
+    </table>
+<%= end_form_tag %>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml"
+				xmlns:flexunit="flexunit.flexui.*"
+				creationComplete="onCreationComplete()"
+				backgroundImage="background.jpg">
+	
+	<mx:Script>
+		<![CDATA[
+			import tests.CommandTest;
+			import tests.URLEncodingTest;
+			import flexunit.framework.TestSuite;
+			
+			private function onCreationComplete():void
+			{
+ 				testRunner.test = createSuite();
+ 				testRunner.startTest();
+ 			}
+			
+			// Creates the test suite to run
+			private function createSuite():TestSuite {
+ 				var ts:TestSuite = new TestSuite()
+ 				ts.addTestSuite(URLEncodingTest)
+ 				ts.addTestSuite(CommandTest)
+ 				return ts;
+ 			}
+			
+		]]>
+	</mx:Script>
+
+	<!-- flexunit provides a very handy default test runner GUI -->
+	<flexunit:TestRunnerBase id="testRunner" width="100%" height="100%" />
+</mx:Application>

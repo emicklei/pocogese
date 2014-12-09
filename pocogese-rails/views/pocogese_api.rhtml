@@ -1,0 +1,6 @@
+<%= form_tag :action => "pocogese_process_form" %>
+    <%= hidden_field "pocogese_command" , "login" %>
+    Name:<%= text_field "item" , "name" %><br/>
+    Value:<%= text_field "item" , "password" %>
+    <%= submit_tag %>
+<%= end_form_tag %>

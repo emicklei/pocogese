@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flexLibProperties version="1">
+<includeClasses>
+<classEntry path="com.philemonworks.flex.net.Command"/>
+<classEntry path="com.philemonworks.flex.net.HttpClient"/>
+<classEntry path="com.philemonworks.flex.net.Reply"/>
+<classEntry path="com.philemonworks.flex.net.RequestFault"/>
+<classEntry path="com.philemonworks.flex.net.RequestFaultDialog"/>
+<classEntry path="com.philemonworks.flex.net.ResponseHandler"/>
+<classEntry path="com.philemonworks.flex.net.TextMessage"/>
+<classEntry path="com.philemonworks.flex.test.ControllerTestCase"/>
+</includeClasses>
+<includeResources/>
+<namespaceManifests/>
+</flexLibProperties>

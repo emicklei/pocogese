@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.philemonworks</groupId>
+	<artifactId>pocogese</artifactId>
+	<packaging>jar</packaging>
+	<version>0.4</version>
+	<name>Pocogese-Java</name>
+	<description>Lightweight framework for REST style webapplications and services</description>
+	<url>http://code.google.com/p/pocogese/</url>
+	  <scm>
+	    <connection>scm:svn:https://ernest.micklei@pocogese.googlecode.com/svn/trunk/pocogese-java</connection>
+	    <url>https://pocogese.googlecode.com/svn/trunk/pocogese-java</url>
+	  </scm>	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		
+    	<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.8</version>
+		</dependency>		
+		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.4</version>
+			<scope>provided</scope>
+		</dependency>
+		
+	    <dependency>
+	      <groupId>qdox</groupId>
+	      <artifactId>qdox</artifactId>
+	      <version>1.6.1</version>
+	      <scope>provided</scope>  <!--  for development only -->
+	    </dependency>
+	        
+	    <dependency>
+	      <groupId>org.antlr</groupId>
+	      <artifactId>stringtemplate</artifactId>
+	      <version>3.0</version>
+	      <scope>provided</scope> <!--  for development only -->
+	    </dependency>
+    		
+	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+			    <artifactId>maven-assembly-plugin</artifactId>
+		        <configuration>
+		          <descriptorRefs>
+		            <descriptorRef>bin</descriptorRef>
+		          </descriptorRefs>
+		        </configuration>
+			</plugin>
+		      <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-release-plugin</artifactId>
+		        <configuration>
+		          <tagBase>https://pocogese.googlecode.com/svn/trunk/releases</tagBase>
+		        </configuration>
+		      </plugin>			
+		</plugins>
+	</build>
+	  <reporting>
+	    <plugins>
+	      <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-pmd-plugin</artifactId>
+	      </plugin>
+	    </plugins>
+	  </reporting>	
+	<distributionManagement> 
+		<site>
+			<id>website-philemonworks</id>
+			<url>scp://philemonworks.com:14598/home/ernest/philemonworks_htdocs/pocogese-java</url>
+		</site>
+		<repository>
+			<id>releases</id>
+			<name>Internal Releases</name>
+			<url>http://dev.gijjes.nl/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Internal Snapshots</name>
+			<url>http://dev.gijjes.nl/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
+		 	
+</project>

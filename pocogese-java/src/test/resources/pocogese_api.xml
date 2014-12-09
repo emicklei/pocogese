@@ -1,0 +1,7 @@
+<pocogese>
+	<controller path="student-services">
+		<selection name="findSubjects">
+			<param name="student_id" />
+		</selection>
+	</controller>
+</pocogese>

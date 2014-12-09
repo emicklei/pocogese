@@ -1,0 +1,14 @@
+Pocogese is a lightweight framework to facilitate the communication between an Adobe Flex Application and Rails or Java-based Webservices.
+Pocogese implements the concept of Commands and Selections applied to the remote invocation of services. 
+Its design is based on the observation that services either read or manipulate resources. 
+
+Reading is realized by sending GET requests with selections ; these should not change the state of the resource requested.
+Selections return with a single resource or a list of resources based on some selection criteria.
+
+Manipulation is realized by sending POST requests with commands ; these change the state of one or multiple resources.
+Typical commands include create,update and delete, but any other modifying action can be modelled this way.
+Commands return with information about the status of the manipulation and may include a result and explanation messages.
+
+This project is hosted by Google at http://code.google.com/p/pocogese/
+
+Ernest dot Micklei at PhilemonWorks.com, 2007

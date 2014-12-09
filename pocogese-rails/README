@@ -1,0 +1,32 @@
+Pocogese-Rails
+============
+
+To enable Flex service generation, tell the controller what the api of your command or selection is.
+The first argument of the api method is the symbol name of the method, the remainder argument specifiy the argument names.
+Current implementation assumes string parameters.
+
+class OfferController < ApplicationController
+	pocogese :offer
+	
+	command_api :calculate , :offer_id
+	def calulate(offer_id)
+		
+		# fetch the offer, throw some calculation at it and save it again
+		theOffer = Offer.find(offer_id)
+		theOffer.calculate
+		theOffer.save!
+		
+		# return a notification
+		Reply.status("calculated")
+	end
+	
+	selection_api :pending
+	def pending
+		Offer.find_all_pending
+	end
+	
+end
+	
+	
+In lib/tasks you will find the "generate" task in the file pocogese.rake
+Change the target path and enter your controllers
